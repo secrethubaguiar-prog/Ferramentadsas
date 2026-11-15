@@ -322,4 +322,9 @@ class DeauthStorm:
             if ap_mac in line:
                 # O canal está na 4ª coluna
                 parts = line.split()
-                if len(parts)
+                if len(parts) > 3:
+                    try:
+                        return int(parts[3])
+                    except ValueError:
+                        pass
+        return None
